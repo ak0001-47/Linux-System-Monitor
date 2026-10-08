@@ -166,6 +166,33 @@ The overall data flow is:
               ncurses Dashboard
 
 
+# Project Structure:
+
+linux-system-monitor/
+│
+├── CMakeLists.txt
+├── README.md
+│
+├── include/
+│   ├── cpu.hpp
+│   ├── memory.hpp
+│   ├── process.hpp
+│   ├── system.hpp
+│   └── ui.hpp
+│
+├── src/
+│   ├── main.cpp
+│   ├── cpu.cpp
+│   ├── memory.cpp
+│   ├── process.cpp
+│   ├── system.cpp
+│   └── ui.cpp
+│
+├── tests/
+│
+└── build/
+
+
 The project separates data collection from presentation.
 For example:
 
@@ -189,7 +216,7 @@ ui.cpp
     ↓
 Terminal dashboard
 
-Project Development Approach
+# Project Development Approach
 
 The project is being developed incrementally.
 
@@ -221,34 +248,21 @@ Testing and Refinement
 
 This approach makes each component easier to understand, test, debug, and explain.
 
-Initial Project Setup
 
-The project was created under the Linux projects directory:
 
-/mnt/d/LinuxProjects/linux/linux-system-monitor
+===============================================
+             LINUX SYSTEM MONITOR
+===============================================
 
-Project Structure:
+CPU Usage:    3.76%
+Memory:       67.29%
+Uptime:       138396 seconds
+Load Average: 0.29 0.27 0.33
 
-linux-system-monitor/
-│
-├── CMakeLists.txt
-├── README.md
-│
-├── include/
-│   ├── cpu.hpp
-│   ├── memory.hpp
-│   ├── process.hpp
-│   ├── system.hpp
-│   └── ui.hpp
-│
-├── src/
-│   ├── main.cpp
-│   ├── cpu.cpp
-│   ├── memory.cpp
-│   ├── process.cpp
-│   ├── system.cpp
-│   └── ui.cpp
-│
-├── tests/
-│
-└── build/
+-----------------------------------------------
+PID     PROCESS          CPU %
+-----------------------------------------------
+199094  MainThread       1.25
+83803   MainThread       0.75
+183582  MainThread       0.50
+...
